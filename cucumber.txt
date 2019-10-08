@@ -1,0 +1,90 @@
+Q #1) Explain Cucumber shortly.
+Ans: Cucumber is a tool that is based on Behavior Driven Development (BDD) methodology.The main aim of Behavior Driven Development framework is to make various project roles such as Business Analysts, Quality Assurance, Developers etc., understand the application without diving deep into the technical aspects.
+Q #2) What language is used by Cucumber?
+Ans: Gherkin is the language that is used by the Cucumber tool. It is a simple English representation of the application behavior. Gherkin language uses several keywords to describe the behavior of application such as Feature, Scenario, Scenario Outline, Given, When, Then etc.
+Q #3) What is meant by a feature file?
+Ans: A feature file must provide a high-level description of an Application Under Test (AUT). The first line of the feature file must start with the keyword ‘Feature’ following the description of the application under test.
+A feature file may include multiple scenarios within the same file. A feature file has the extension .feature.
+Q #5) What is the purpose of Scenario Outline in Cucumber?
+Ans: Scenario outline is a way of parameterization of scenarios. This is ideally used when the same scenario needs to be executed for multiple sets of data, however, the test steps remain the same. Scenario Outline must be followed by the keyword ‘Examples’, which specify the set of values for each parameter.
+Q #7) What is the purpose of Step Definition file in Cucumber?
+
+Ans: A step definition file in Cucumber is used to segregate the feature files from the underlying code. Each step of the feature file can be mapped to a corresponding method on the Step Definition file. While feature files are written in an easily understandable language such as Gherkin, Step Definition files are written in programming languages such as Java, .Net, Ruby etc.
+Q #8) What are the major advantages of Cucumber framework?
+Ans: Given below are the advantages of Cucumber Gherkin framework that make Cucumber an ideal choice for rapidly evolving Agile methodology in today’s corporate world.
+Cucumber is an open source tool.
+Plain Text representation makes it easier for non-technical users to understand the scenarios.
+It bridges the communication gap between various project stakeholders such as Business Analysts, Developers, and Quality Assurance personnel.
+Automation test cases developed using the Cucumber tool are easier to maintain and understand as well.
+Easy to integrate with other tools such as Selenium and Capybara.
+Q #11) What is the purpose of Behaviour Driven Development (BDD) methodology in the real world?
+Ans: BDD is a methodology to understand the functionality of an application in simple plain text representation. The main aim of Behavior Driven Development framework is to make various project roles such as Business Analysts, Quality Assurance, Developers, Support Team understand the application without diving deep into the technical aspects.
+Q #14) What symbol is used for parameterization in Cucumber?
+Ans: Pipe symbol (|) is used to specify one or more parameter values in a feature file.
+#15) What is the purpose of Examples keyword in Cucumber?
+
+Ans: Examples keyword is used to specify values for each parameter used in the scenario. Scenario Outline keyword must always be followed by the keyword Examples.
+Q #16) What is the file extension for a feature file?
+Ans: File Extension for a feature file is .feature. A feature file is ideally written in a notepad file and is saved with the extension feature.
+Q #17) Provide an example of step definition file in Cucumber.
+Ans: Step definition corresponding to the step “Open Chrome browser and launch the application” may look like the code mentioned below:
+@Given("^Open Chrome browser and launch the application$")
+public void openBrowser()
+{
+driver = new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("www.facebook.com");
+}
+Q #18) What is the purpose of Cucumber Options tag?
+Ans: Cucumber Options tag is used to provide a link between the feature files and step definition files. Each step of the feature file is mapped to a corresponding method on the step definition file.
+Below is the syntax of Cucumber Options tag:
+@CucumberOptions(features="Features",glue={"StepDefinition"})
+Q #19) How can Cucumber be integrated with Selenium WebDriver?
+Ans: Cucumber can be integrated with Selenium webdriver by downloading the necessary JAR files.
+Given below are the list of JAR files that are to be downloaded for using Cucumber with Selenium web driver:
+
+cucumber-core-1.2.2.jar
+cucumber-java-1.2.2.jar
+cucumber-junit-1.2.2.jar
+cucumber-jvm-deps-1.0.3.jar
+cucumber-reporting-0.1.0.jar
+gherkin-2.12.2.jar
+Q #23) Explain the purpose of keywords that are used for writing a scenario in Cucumber.
+
+Ans: “Given” keyword is used to specify a precondition for the scenario. “When” keyword is used to specify an operation to be performed. “Then” keyword is used to specify the expected result of a performed action. “And” keyword is used to join one or more statements together into a single statement.
+
+Q #24) What is the name of the plugin that is used to integrate Eclipse with Cucumber?
+
+Ans: Cucumber Natural Plugin is the plugin that is used to integrate Eclipse with Cucumber.
+
+Q #25) What is the meaning of TestRunner class in Cucumber?
+
+Ans: TestRunner class is used to provide the link between feature file and step definition file. Below is the sample representation of how TestRunner class will look like. A TestRunner class is generally an empty class with no class definition.
+
+Q #26) Provide an example of TestRunner class in Cucumber.
+
+Ans:
+
+Package com.sample.TestRunner
+
+importorg.junit.runner.RunWith; 
+importcucumber.api.CucumberOptions; 
+importcucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class) 
+@CucumberOptions(features="Features",glue={"StepDefinition"}) 
+public class Runner 
+{
+}
+Q #27) What is the starting point of execution for feature files?
+
+Ans: When integrated with Selenium, the starting point of execution must be from TestRunner class.
+
+Q #28) Should any code be written within TestRunner class?
+Ans: No code should be written under the TestRunner class. It should include the tags @RunWith and @CucumberOptions.
+Q #29) What is the use of features property under Cucumber Options tag?
+Ans: Features property is used to let Cucumber framework identify the location of the feature files.
+Q #30) What is the use of glue property under Cucumber Options tag?
+Ans: Glue property is used to let Cucumber framework identify the location of step definition files.
+Q #31) What is the maximum number of steps that are to be written within a scenario?
+Ans: The maximum number of steps to be written in a scenario is 3-4 steps.
